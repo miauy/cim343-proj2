@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Weather App (°F)</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="weather-container">
+
+    <!-- Search Box -->
+    <div class="search-box">
+      <input type="text" id="cityInput" placeholder="Enter city...">
+      <button id="searchBtn">Search</button>
+    </div>
+
+    <!-- Main Weather Info -->
+    <div class="weather-info">
+      <h1 id="cityName">Miami</h1>
+      <p id="temperature">76°F</p>
+      <p id="description">Broken Clouds</p>
+      <div id="weatherIcon">
+        <!-- Weather icon inserted via JavaScript -->
+      </div>
+    </div>
+
+    <!-- Extra Info (now using boxes) -->
+    <div class="extra-info">
+      <div class="info-box">
+        <span>Humidity:</span>
+        <span id="humidity">76%</span>
+      </div>
+      <div class="info-box">
+        <span>Wind:</span>
+        <span id="windSpeed">8 mph</span>
+      </div>
+      <div class="info-box">
+        <span>Feels Like:</span>
+        <span id="feelsLike">77°F</span>
+      </div>
+      <div class="info-box">
+        <span>Pressure:</span>
+        <span id="pressure">1017 hPa</span>
+      </div>
+    </div>
+
+    <!-- Hourly Forecast -->
+    <div class="hourly-forecast" id="hourlyForecast">
+    </div>
+  </div>
+
+  <!-- Your JavaScript file (not shown here) -->
+  <script src="script.js"></script>
+</body>
+</html>
