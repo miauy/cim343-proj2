@@ -54,17 +54,18 @@
     display: flex;
     gap: 10px;
     margin-bottom: 1.5rem;
+    color:#fff;
   }
   
   .search-box input {
     flex: 1;
     padding: 12px 16px;
     border-radius: 20px;
-    border: none;
+    border: 1px solid rgba(255, 255, 255, 0.2);
     outline: none;
     font-size: 16px;
-    background: rgba(255, 255, 255, 0.3);
-    color: white;
+    background-color: rgba(255, 255, 255, 0.3);
+    color: #fff;
   }
   
   .search-box button {
@@ -80,7 +81,7 @@
   .card {
     background: rgba(173, 216, 230, 0.15);
     border-radius: 12px;
-    padding: 1.5rem;
+    padding: 2rem; 
     backdrop-filter: blur(12px);
   }
   
@@ -97,7 +98,7 @@
   }
   
   .info-box {
-    background: rgba(255, 255, 255, 0);
+    background: rgba(50, 121, 216, 1);
     border-radius: 12px;
     padding: 15px;
     text-align: center;
@@ -130,7 +131,8 @@
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
     gap: 1rem;
-    padding: 1rem 0;
+    padding: 1rem;
+    
   }
   
   .hour-item {
@@ -161,4 +163,6 @@
     .weather-container {
       grid-template-columns: 1fr;
     }
+
   }
+
