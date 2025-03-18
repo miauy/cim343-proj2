@@ -1,56 +1,76 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Weather App (°F)</title>
-  <link rel="stylesheet" href="style.css" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Weather App (°F)</title>
+    <link rel="stylesheet" href="style.css" />
 </head>
+
 <body>
-  <div class="weather-container">
-
-    <!-- Search Box -->
-    <div class="search-box">
-      <input type="text" id="cityInput" placeholder="Enter city...">
-      <button id="searchBtn">Search</button>
+    <div class="clouds">
+        <div class="cloud" style="top: 20%; width: 200px; height: 60px; animation-duration: 50s"></div>
+        <div class="cloud" style="top: 40%; width: 300px; height: 80px; animation-duration: 60s"></div>
+        <div class="cloud" style="top: 60%; width: 250px; height: 70px; animation-duration: 45s"></div>
     </div>
 
-    <!-- Main Weather Info -->
-    <div class="weather-info">
-      <h1 id="cityName">Miami</h1>
-      <p id="temperature">76°F</p>
-      <p id="description">Broken Clouds</p>
-      <div id="weatherIcon">
-        <!-- Weather icon inserted via JavaScript -->
-      </div>
+    <div class="weather-container">
+        <!-- Search Box -->
+        <div class="search-box" style="grid-column: 1 / -1">
+            <input type="text" id="cityInput" placeholder="Enter city...">
+            <button id="searchBtn">Search</button>
+        </div>
+
+        <!-- Current Weather Card -->
+        <div class="card" style="grid-column: 1 / -1">
+            <div class="weather-info">
+                <h1 id="cityName">Miami</h1>
+                <p id="temperature">76°F</p>
+                <p id="description">Broken Clouds</p>
+                <div id="weatherIcon"></div>
+            </div>
+
+            <div class="extra-info">
+                <div class="info-box">
+                    <span class="label">Humidity:</span>
+                    <span class="value" id="humidity"></span>
+                </div>
+                <div class="info-box">
+                    <span class="label">Feels Like:</span>
+                    <span class="value" id="feelsLike"></span>
+                </div>
+                <div class="info-box">
+                    <span class="label">Pressure:</span>
+                    <span class="value" id="pressure"></span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Hourly Forecast -->
+        <div class="card hourly-forecast" style="grid-column: 1 / -1" id="hourlyForecast">
+            <h2>Hourly Forecast</h2>
+        </div>
+    
+
+        <!-- Air Quality -->
+        <div class="card">
+            <h2>Air Quality</h2>
+            <div id="airQuality">54 - Moderate</div>
+        </div>
+
+        <!-- Wind Info -->
+        <div class="card">
+            <h2>Wind</h2>
+            <div id="windInfo">
+                <div>Speed: <span id="windSpeed">16 mph</span></div>
+                <div>Gusts: <span id="windGust">25 mph</span></div>
+                <div>Direction: <span id="windDir">SW</span></div>
+            </div>
+        </div>
     </div>
 
-    <!-- Extra Info (now using boxes) -->
-    <div class="extra-info">
-      <div class="info-box">
-        <span>Humidity:</span>
-        <span id="humidity">76%</span>
-      </div>
-      <div class="info-box">
-        <span>Wind:</span>
-        <span id="windSpeed">8 mph</span>
-      </div>
-      <div class="info-box">
-        <span>Feels Like:</span>
-        <span id="feelsLike">77°F</span>
-      </div>
-      <div class="info-box">
-        <span>Pressure:</span>
-        <span id="pressure">1017 hPa</span>
-      </div>
-    </div>
-
-    <!-- Hourly Forecast -->
-    <div class="hourly-forecast" id="hourlyForecast">
-    </div>
-  </div>
-
-  <!-- Your JavaScript file (not shown here) -->
-  <script src="script.js"></script>
+    <script src="script.js"></script>
 </body>
+
 </html>

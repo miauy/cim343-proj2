@@ -80,8 +80,27 @@ function updateUI(current, forecast) {
       <div class="hour-item">
         <div>${timeString}</div>
         <div>${temp}°F</div>
+      </div>`;
+
+      // 10-Day Forecast
+  const dailyForecast = document.getElementById("dailyForecast");
+  const dailyData = forecast.list.filter((_, index) => index % 8 === 0).slice(0, 10);
+  
+  dailyForecast.innerHTML = dailyData.map(day => {
+    const date = new Date(day.dt * 1000);
+    return `
+      <div class="daily-item">
+        <span>${date.toLocaleDateString('en', {weekday: 'short'})}</span>
+        <span>${Math.round(day.main.temp_max)}°/${Math.round(day.main.temp_min)}°</span>
       </div>
     `;
+  }).join("");
+
+  // Wind Direction
+  const directions = ['N', 'NE', 'E', 'SE', 'S', 'SW', 'W', 'NW'];
+  const deg = current.wind.deg;
+  const index = Math.round(deg / 45) % 8;
+  document.getElementById("windDir").textContent = directions[index];
   }).join("");
 }
 
@@ -92,3 +111,16 @@ function formatHour(timestamp) {
   hour = hour % 12 || 12;        // convert 24h -> 12h
   return `${hour}:00 ${ampm}`;
 }
+function createClouds() {
+    const cloudsContainer = document.querySelector('.clouds');
+    for (let i = 0; i < 5; i++) {
+      const cloud = document.createElement('div');
+      cloud.className = 'cloud';
+      cloud.style.top = `${Math.random() * 100}%`;
+      cloud.style.width = `${Math.random() * 200 + 100}px`;
+      cloud.style.height = `${Math.random() * 60 + 30}px`;
+      cloud.style.animationDuration = `${Math.random() * 30 + 30}s`;
+      cloudsContainer.appendChild(cloud);
+    }
+  }
+  window.addEventListener('load', createClouds);
